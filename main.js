@@ -1,3 +1,4 @@
+var progressCounter = 0;
 var topicId = 0;
 var resultDOMS = document.querySelectorAll('.result');
 var likertScaleDOMS = document.querySelectorAll('.likert');
@@ -60,6 +61,7 @@ function saveData(data){
  * update snippets depending on topicId
  */
 function refreshPage(){
+    progressCounter++;
     likertScaleDOMS.forEach(element => {
         for(let i = 1; i < 10; i+=2){
             let likertLevel = element.childNodes[i].childNodes[1];
@@ -67,7 +69,7 @@ function refreshPage(){
         }
     });
 
-    document.querySelector('.progress').innerHTML = topicId + " / 8"; //todo: topicId startet bei 0? -> +1 draufrechnen
+    document.querySelector('.progress').innerHTML = progressCounter + " / 6";
     
     //todo: fill searchbar with new content
     //todo: fill snipptes with new content
