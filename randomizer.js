@@ -18,7 +18,7 @@ function shuffle(array) {
 }
   
 
-export default function generateRandoms(){
+ function generateRandoms(){
     let arrBaseline = [0,1,2,3,4,5,6,7];
     arrBaseline = shuffle(arrBaseline);
     arrBaseline = arrBaseline.splice(0, arrBaseline.length/2);
@@ -28,4 +28,8 @@ export default function generateRandoms(){
     return [arrOrder, arrBaseline]
 }
 
-//export default {generateRandoms};
+function generateSessionId(){
+  return Math.floor((Math.random() * 1000000) + 1);
+}
+
+export {generateRandoms, shuffle, generateSessionId};

@@ -34,11 +34,11 @@ function loadFile(filePath) {
 
 export default class IOS{
   
-  constructor(){ 
+  constructor(sessionId){ 
     //this.data = loadFile("file:///C:/Users/Student/Desktop/IVV/IVV-Survey/data.txt")
     //this.data = readTextFile("data.txt")
+    this.sessionId = sessionId;
     this.data = loadFile("http://127.0.0.1:5500/data.txt")
-    console.log("con done")
   }
   
   /**
@@ -51,4 +51,11 @@ export default class IOS{
     
     return returnData.splice(index*16, index*16 + 16);
   }
+
+  writeData(data){
+    console.log(this.sessionId + " sent to server: " + data)
+
+    //var s = CreateTextFile("http://127.0.0.1:5500/logs/"+filename, true);
+  }
 }
+
