@@ -13,7 +13,9 @@ function endQuestionary(){
 
     let age = document.getElementById("age").value;
 
-    console.log(gen);
+    let jsonText = '{ "gender":"' + gender + '", "age":"' + age + '"  }';
+    let jsonObjekt = JSON.parse(jsonText);
+    console.log(jsonObjekt);
 }
 
 
