@@ -1,7 +1,6 @@
 import IOS from "./ios.js";
 import {generateRandoms, shuffle, generateSessionId} from "./randomizer.js";
 
-var sessionId;
 var topicId = 0;
 var remainingTopics= [0,1,2,3,4,5];
 var resultDOMS = document.querySelectorAll('.result');
@@ -10,6 +9,8 @@ document.querySelector('.submit').addEventListener("click", next);
 var ios;
 
 
+var questions = ["Can convalescent plasma cure COVID-19?","Can exposure to UV light prevent COVID-19?", "Can high temperatures and humidity prevent COVID-19?",
+"Can ACE and ARBs worsen COVID-19?","Can Homemade Vodka Sanitizer prevent COVID-19?","Can Echinacea prevent COVID-19?"];
 
 function init(){
     ios = new IOS(generateSessionId());
@@ -21,9 +22,13 @@ function init(){
     
 }
 
+function goToEndQuestionary(){
+    console.log("Start end questionary here");
+}
+
 function buildSerp(){
     topicId = remainingTopics[0];
-    topicId = 0; //Temporary
+    //topicId = 0; //Temporary
 
     remainingTopics = remainingTopics.splice(1,remainingTopics.length);
 
@@ -36,14 +41,15 @@ function buildSerp(){
     //Save randoms
     let serpTexts = []
     for(let i = 0; i < randoms[0].length;i++){
-        if(randoms[1].includes(randoms[0][i])){ //if the current picked object is in the baseline array
-            serpTexts[i] = text[randoms[0][i]+8].substring(0, text[randoms[0][i]+8].length-2);
+        let index = randoms[0][i];
+        //console.log(index + 8);
+        //console.log(serpTexts.length);
+        if(randoms[1].includes(index)){ //if the current picked object is in the baseline array
+            serpTexts[i] = text[index+8].substring(0, text[index+8].length-1);
         }else{
-            serpTexts[i] = "-----";
-            serpTexts[i] = serpTexts[i]+ text[randoms[0][i]].substring(0, text[randoms[0][i]].length-2);
+            serpTexts[i] = text[index].substring(0, text[index].length-1);
         }
     }
-    console.log(serpTexts);
     return serpTexts;
 }
 
@@ -77,8 +83,6 @@ function getLikertToResult (num) {
 
 /** returns array of all chosen likert-levels */
 function next(){
-    
-
     let likerts = [];
     for(let i = 0; i < 8; i++){
         likerts[i] = getLikertToResult(i);
@@ -86,7 +90,11 @@ function next(){
 
     if(!likerts.includes(-1)){
         saveData(likerts);
-        refreshPage();
+        if(remainingTopics.length == 0){
+            goToEndQuestionary();
+        }else{
+            refreshPage();
+        }
 
     } else {
         alert("Please complete all questions.");
@@ -99,7 +107,6 @@ function next(){
  */
 function saveData(data){
     ios.writeData(data);
-    //console.log("data saved:" + data);
 }
 
 /**
@@ -119,10 +126,9 @@ function refreshPage(){
         }
     });
     
-    document.querySelector('.progress').innerHTML = 6- remainingTopics.length + " / 6"; //todo: topicId startet bei 0? -> +1 draufrechnen
-    
+    document.querySelector('.progress').innerHTML = 6- remainingTopics.length + " / 6";
+    document.querySelector('.gLFyf').value = questions[topicId];
     //todo: fill searchbar with new content
-    //todo: fill snipptes with new content
 }
 
 

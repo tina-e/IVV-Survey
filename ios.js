@@ -34,11 +34,9 @@ function loadFile(filePath) {
 
 export default class IOS{
   
-  constructor(sessionId){ 
-    //this.data = loadFile("file:///C:/Users/Student/Desktop/IVV/IVV-Survey/data.txt")
-    //this.data = readTextFile("data.txt")
+  constructor(sessionId){
     this.sessionId = sessionId;
-    this.data = loadFile("http://127.0.0.1:5500/data.txt")
+    this.data = loadFile("http://127.0.0.1:5500/data.txt").split("\n");
   }
   
   /**
@@ -46,10 +44,9 @@ export default class IOS{
    * @param {Array} index list with chosen documents
    */
   getData(index){
-    //return "Test data"
-    let returnData = this.data.split("\n")
-    
-    return returnData.splice(index*16, index*16 + 16);
+    let returnData = this.data.slice(index*16, index*16 + 16);
+    //console.log(returnData);
+    return returnData;
   }
 
   writeData(data){
