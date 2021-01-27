@@ -3,7 +3,9 @@ function init(){
 }
 
 function endQuestionary(){
-    console.log("AMERIKA STINKT");
+    
+
+    console.log("Hello world");
 }
 
 
