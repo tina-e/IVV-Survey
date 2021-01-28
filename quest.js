@@ -15,6 +15,10 @@ function endQuestionary(){
 
     let jsonText = '{ "gender":"' + gender + '", "age":"' + age + '"  }';
     let jsonObjekt = JSON.parse(jsonText);
+    addToServer(jsonObjekt);
+}
+
+function addToServer(jsonObjekt){
     console.log(jsonObjekt);
 }
 
