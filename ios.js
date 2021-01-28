@@ -36,7 +36,8 @@ export default class IOS{
   
   constructor(sessionId){
     this.sessionId = sessionId;
-    this.data = loadFile("http://127.0.0.1:5500/data.txt").split("\n");
+    this.data = loadFile("http://217.160.242.218/data.txt").split("\n");
+    //this.data = loadFile("http://127.0.0.1:5500/data.txt").split("\n");
   }
   
   /**
@@ -49,10 +50,40 @@ export default class IOS{
     return returnData;
   }
 
-  writeData(data){
-    console.log(this.sessionId + " sent to server: " + data)
+  writeData(rawData){
+    console.log(this.sessionId + " sent to server: " + rawData)
+    
+    const https = require('https')
 
-    //var s = CreateTextFile("http://127.0.0.1:5500/logs/"+filename, true);
+    const data = JSON.stringify({
+      test: this.sessionId + "-" + rawData
+    })
+    
+    const options = {
+      hostname: '217.160.242.218',
+      port: 443,
+      path: '/logs',
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Content-Length': data.length
+      }
+    }
+    
+    const req = https.request(options, res => {
+      console.log(`statusCode: ${res.statusCode}`)
+    
+      res.on('data', d => {
+        process.stdout.write(d)
+      })
+    })
+    
+    req.on('error', error => {
+      console.error(error)
+    })
+    
+    req.write(data)
+    req.end()
   }
 }
 
