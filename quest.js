@@ -6,7 +6,7 @@ function endQuestionary(){
 
     let gender;
     for (let i = 0; i < 3; i++) {
-        if(document.getElementById("gender").children[0].children[0].checked){
+        if(document.getElementById("gender").children[i].children[0].checked){
             gender = i;
         }  
     }
