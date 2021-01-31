@@ -4,6 +4,13 @@
     
 }
 
+
 body{
+    font-size: larger;
+}
+
+.infoVP{
+    margin-top: 1%;
+    margin-bottom: 1%;
     font-size: larger;
 }
