@@ -6,6 +6,155 @@
 </head>
 
 <body>
+
+    <div class = "question">
+        <label>
+            Did you notice any difference between the given snippets?
+        </label>
+        <form action="">
+            <ul class='likert' id="notedDifrent">
+                <li>
+                    <input type="radio" name="likert">
+                    <label>Yes</label>
+                </li>
+                <li>
+                    <input type="radio" name="likert">
+                    <label>No</label>
+                </li>
+            </ul>
+        </form>
+        <label> If so, which?</label>
+        <br>
+        <input style="width: 700px; height: 100px;" id="difrenceNoted">
+    </div>
+
+    <div class = "split" >You may have noticed that some of the snippets contained "...", and others were written in a grammatically correct way.</div>
+    
+    
+    <div class = "question">
+        <label>
+            Did you actively recognized, that some snippets were written in a grammatically correct way and others were not, because they contained "...".
+        </label>
+        <form action="">
+            <ul class='likert' id="notedDot">
+                <li>
+                    <input type="radio" name="likert">
+                    <label>Yes, they caught my eyes immediately.</label>
+                </li>
+                <li>
+                    <input type="radio" name="likert">
+                    <label>I noticed this sometimes but did not pay attention to them further.</label>
+                </li>
+                <li>
+                    <input type="radio" name="likert">
+                    <label>I did not actively notice this difference at all.</label>
+                </li>
+            </ul>
+        </form>
+    </div>
+
+    <div class = "question">
+        <label>
+            If the snippets were written in a grammatically correct way, did this have an influence on your judgements during the study.
+        </label>
+        <form action="">
+            <ul class='likert' id="influenzed">
+                <li>
+                    <input type="radio" name="likert">
+                    <label>I have not actively noticed the difference.</label>
+                </li>
+                <li>
+                    <input type="radio" name="likert">
+                    <label>Strongly agree</label>
+                </li>
+                <li>
+                    <input type="radio" name="likert">
+                    <label>Agree</label>
+                </li>
+                <li>
+                    <input type="radio" name="likert">
+                    <label>Neutral</label>
+                </li>
+                <li>
+                    <input type="radio" name="likert">
+                    <label>Disagree</label>
+                </li>
+                <li>
+                    <input type="radio" name="likert">
+                    <label>Strongly disagree</label>
+                </li>
+            </ul>
+        </form>
+    </div>
+
+    <div class = "question">
+        <label>
+            Which of these Statements do you agree to the most?
+        </label>
+        <form action="">
+            <ul class='likert' id="credibleChangeGeneral">
+                <li>
+                    <input type="radio" name="likert">
+                    <label>Truncated snippets are more credible in general.</label>
+                </li>
+                <li>
+                    <input type="radio" name="likert">
+                    <label>Truncated snippets are often more credible.</label>
+                </li>
+                <li>
+                    <input type="radio" name="likert">
+                    <label>Truncated snippets are sometimes more credible.</label>
+                </li>
+                <li>
+                    <input type="radio" name="likert">
+                    <label>Truncated and grammatically correct snippets are equally credible.</label>
+                </li>
+                <li>
+                    <input type="radio" name="likert">
+                    <label>Truncated snippets are sometimes less credible.</label>
+                </li>
+                <li>
+                    <input type="radio" name="likert">
+                    <label>Truncated snippets are often less credible.</label>
+                </li>
+                <li>
+                    <input type="radio" name="likert">
+                    <label>Truncated snippets are less credible in general.</label>
+                </li>
+            </ul>
+        </form>
+    </div>
+    
+    <div class = "question">
+        <label>
+            How much do you agree to the Statement: "I find the truncated snippets harder to read."
+        </label>
+        <form action="">
+            <ul class='likert' id="harderToRead">
+                <li>
+                    <input type="radio" name="likert">
+                    <label>Strongly agree</label>
+                </li>
+                <li>
+                    <input type="radio" name="likert">
+                    <label>Agree</label>
+                </li>
+                <li>
+                    <input type="radio" name="likert">
+                    <label>Neutral</label>
+                </li>
+                <li>
+                    <input type="radio" name="likert">
+                    <label>Disagree</label>
+                </li>
+                <li>
+                    <input type="radio" name="likert">
+                    <label>Strongly disagree</label>
+                </li>
+            </ul>
+        </form>
+    </div>
+
     <div class = "question">
         <label c>What is youre gender?</label>
         <form action="">
@@ -28,10 +177,12 @@
     <div class = "question">
         <label class="statement">How old are you?</label> <br>
         <input id="age">
+        <br><br>
     </div>
     <div class = "question">
         <label class="statement">What is youre current Profession?</label> <br>
         <input id="prof">
+        <br><br>
     </div>
     <div class = "question">
         <label >What is youre language Level?</label>
@@ -65,6 +216,7 @@
     <div class = "question">
         <label class="statement">What is your Matrikelnummer </label> <br>
         <input id="matNummer">
+        <br><br>
     </div>
     <div class = "question">
         <label class="statement">What is your Email </label> <br>
