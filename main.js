@@ -2,7 +2,8 @@ import IOS from "./ios.js";
 import {generateRandoms, shuffle, generateSessionId} from "./randomizer.js";
 
 var topicId = 0;
-var remainingTopics= [0,1,2,3,4,5];
+//var remainingTopics= [0,1,2,3,4,5];
+var remainingTopics= [0];
 var resultDOMS = document.querySelectorAll('.result');
 var likertScaleDOMS = document.querySelectorAll('.likert');
 document.querySelector('.submit').addEventListener("click", next);
@@ -14,6 +15,7 @@ var questions = ["Can convalescent plasma cure COVID-19?","Can exposure to UV li
 
 function init(){
     ios = new IOS(generateSessionId());
+    console.log(ios);
     remainingTopics = shuffle(remainingTopics);
     
     //save topic order in filename sessionId
@@ -24,6 +26,7 @@ function init(){
 
 function goToEndQuestionary(){
     console.log("Start end questionary here");
+    location.href = "http://127.0.0.1:5500/quest.html";
 }
 
 function buildSerp(){
@@ -73,6 +76,7 @@ function getLikertToResult (num) {
 
     for(let i = 1; i < 10; i+=2){
         let likertLevel = scaleElem.childNodes[i].childNodes[1];
+        console.log(scaleElem.childNodes[i].childNodes[1]);
         if(likertLevel.checked){
             return numClickedLikert;
         }

@@ -66,8 +66,8 @@ export default class IOS extends Observable{
   
   constructor(sessionId){
     this.sessionId = sessionId;
-    this.data = loadFile("http://217.160.242.218/data.txt").split("\n");
-    //this.data = loadFile("http://127.0.0.1:5500/data.txt").split("\n");
+    //this.data = loadFile("http://217.160.242.218/data.txt").split("\n");
+    this.data = loadFile("http://127.0.0.1:5500/data.txt").split("\n");
   }
   
   /**
@@ -83,7 +83,7 @@ export default class IOS extends Observable{
   writeData(rawData){
     console.log(this.sessionId + " sent to server: " + rawData)
     
-    const https = require('https')
+    /*const https = require('https')
 
     const data = JSON.stringify({
       test: this.sessionId + "-" + rawData
@@ -113,7 +113,7 @@ export default class IOS extends Observable{
     })
     
     req.write(data)
-    req.end()
+    req.end()*/
   }
 }
 
