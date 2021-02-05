@@ -62,8 +62,6 @@ function endQuestionary() {
         }
 
         let matNummer = document.getElementById("matNummer").value;
-
-        let matNummer = document.getElementById("matNummer").value;
         let course = document.getElementById("course").value; 
         let email = document.getElementById("mail").value;
 
