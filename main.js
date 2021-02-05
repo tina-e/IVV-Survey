@@ -3,7 +3,7 @@ import {generateRandoms, shuffle, generateSessionId} from "./randomizer.js";
 
 var topicId = 0;
 //var remainingTopics= [0,1,2,3,4,5];
-var remainingTopics= [0];
+var remainingTopics= [0,1];
 var resultDOMS = document.querySelectorAll('.result');
 var likertScaleDOMS = document.querySelectorAll('.likert');
 document.querySelector('.submit').addEventListener("click", next);
@@ -30,6 +30,7 @@ function goToEndQuestionary(){
 }
 
 function buildSerp(){
+    window.scroll(0,0);
     topicId = remainingTopics[0];
     //topicId = 0; //Temporary
 

@@ -1,30 +1,61 @@
 <html>
 <head>
     <link rel="stylesheet" href="perExp.css">
-    <h1>
-        A study about the credibility of web search engines
-    </h1>
+    <div class="header">
+        <h1>
+            Cedibility Judgments in Search Engine Result Pages
+        </h1>
+    </div>
 </head>
 
 <body>
-    <div class="intro">
-        Thank you for participating in our study about credibility judgments. We conduct this study within the class "Informationverhalten verstehen".
+    <div class="intro description">
+        Thank you for participating in our study about credibility judgments!
+        <br>
+        We conduct this study within the class "Informationverhalten verstehen".
         <br><br>
-        In the following, you will get 6 pages with 8 results each and your task is to make an assumption about the credibility of the websites, which are represented by a snippet.
-        This is followed by a short post-questionnaire where you have to provide some demographic information and questions regarding the given search results.
-        The whole study takes approximately XX minutes to complete.
+        In the following, you will get 6 pages with 8 results each and your task is
+        <br>
+        to make an assumption about the credibility of the websites, which are represented by a snippet.
         <br><br>
-        If you are from Medieninformatik or Informationswissenschaft at the University of Regensburg, you can get X VP-hours for this. To receive them, just enter your email and id at the end of the questionary.
+        This is followed by a short post-questionnaire where you have to provide some demographic information
+        <br>
+        and questions regarding the given search results.
         <br><br>
-        We will not identify you by your real name in any reports using information obtained from this online study and that your confidentiality as a participant in this online study will remain secure. It is only seen by us study conductors and supervisors and is later analyzed in a paper. Records are automatically deleted after the end of the research.
+        The whole study takes approximately 20 minutes to complete.
+        <br><br>
+        If you are a Medieninformatik- or Informationswissenschaft-Student at the University of Regensburg,
+        <br>
+        you can get 0.5 VP-hours for this. To receive them, just enter your email and id at the end of the questionary.
+        <br><br>
+        Your data is only seen by the study conductors and supervisors and is later analyzed in a paper.
+        <br>
+        Records are automatically deleted after the end of the research.
     </div>
-    <br><br>
-    I have read everything above and agree to the use of my data.
-    <br>
+
+    <div class=consent>
+        <label class="container">I have read everything above and agree to the use of my data.
+            <input type="checkbox" checked="checked" onClick="toggleVisibility(this)">
+            <span class="checkmark"></span>
+        </label>
+    </div>
+
+    <script type="text/javascript" language="javascript">
+        function toggleVisibility(cb){
+            var startButton = document.getElementById("startButton");
+            if(cb.checked===true){
+                startButton.style.visibility = "visible";
+            }
+            else{
+                startButton.style.visibility = "hidden";
+            }
+        }
+    </script>
+    
     <a href="SERP.html">
-        <button onklick="href='SERP.html'" class="button">
-            Start
-        </button>
+        <div class="buttons" id="startButton">
+            <button onklick="href='SERP.html'" class="submit">Start</button>
+        </div>
     </a>
 </body>
 </html>
