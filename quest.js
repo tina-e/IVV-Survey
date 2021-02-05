@@ -73,6 +73,7 @@ function endQuestionary() {
 
 function addToServer(jsonObjekt) {
     console.log(jsonObjekt);
+    alert("Thank you! If you want to, you can now close the page.");
 }
 
 function checkFinishedAllowed() {
