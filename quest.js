@@ -1,5 +1,8 @@
-function init() {
+import IOS from "./ios.js";
+var id;
+function init(){
     document.querySelector('.submit').addEventListener("click", endQuestionary);
+    id = window.location.search.substring(4);
 }
 
 function endQuestionary() {
@@ -63,7 +66,8 @@ function endQuestionary() {
         let email = document.getElementById("mail").value;
 
         let jsonText = '{ "notedGramDiffrenze":"' + notedDif + '", "participantsNotedDots":"' + notedDot + '", "itInfluenzedPartizipants":"' + influenzed + '", "credibleChangeGeneral":"' + credibleChangeGeneral + '", "harderToRead":"' + harderToRead + '", "gender":"' + gender + '", "age":"' + age + '",  "profession":"' + profession + '","langLevel":"' + langLevel + '","matNummer":"' + matNummer + '","email":"' + email + '"}';
-        let jsonObjekt = JSON.parse(jsonText);
+        //let jsonObjekt = JSON.parse(jsonText);
+        let jsonObjekt = jsonText;
         addToServer(jsonObjekt);
     }
     else {
@@ -72,7 +76,8 @@ function endQuestionary() {
 }
 
 function addToServer(jsonObjekt) {
-    console.log(jsonObjekt);
+    let ios = new IOS(id);
+    ios.writeData(jsonObjekt);
     alert("Thank you! If you want to, you can now close the page.");
 }
 

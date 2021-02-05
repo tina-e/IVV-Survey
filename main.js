@@ -2,20 +2,20 @@ import IOS from "./ios.js";
 import {generateRandoms, shuffle, generateSessionId} from "./randomizer.js";
 
 var topicId = 0;
-//var remainingTopics= [0,1,2,3,4,5];
-var remainingTopics= [0,1];
+var remainingTopics= [0,1,2,3,4,5];
 var resultDOMS = document.querySelectorAll('.result');
 var likertScaleDOMS = document.querySelectorAll('.likert');
 document.querySelector('.submit').addEventListener("click", next);
 var ios;
+var id;
 
 
 var questions = ["Can convalescent plasma cure COVID-19?","Can exposure to UV light prevent COVID-19?", "Can high temperatures and humidity prevent COVID-19?",
 "Can ACE and ARBs worsen COVID-19?","Can Homemade Vodka Sanitizer prevent COVID-19?","Can Echinacea prevent COVID-19?"];
 
 function init(){
-    ios = new IOS(generateSessionId());
-    console.log(ios);
+    id = generateSessionId()
+    ios = new IOS(id);
     remainingTopics = shuffle(remainingTopics);
     
     //save topic order in filename sessionId
@@ -25,15 +25,13 @@ function init(){
 }
 
 function goToEndQuestionary(){
-    console.log("Start end questionary here");
-    location.href = "http://127.0.0.1:5500/quest.html";
+    location.href = "http://127.0.0.1:5500/quest.html"+"?id="+id;
+    
 }
 
 function buildSerp(){
     window.scroll(0,0);
     topicId = remainingTopics[0];
-    //topicId = 0; //Temporary
-
     remainingTopics = remainingTopics.splice(1,remainingTopics.length);
 
     let randoms = generateRandoms();
@@ -46,8 +44,6 @@ function buildSerp(){
     let serpTexts = []
     for(let i = 0; i < randoms[0].length;i++){
         let index = randoms[0][i];
-        //console.log(index + 8);
-        //console.log(serpTexts.length);
         if(randoms[1].includes(index)){ //if the current picked object is in the baseline array
             serpTexts[i] = text[index+8].substring(0, text[index+8].length-1);
         }else{
@@ -77,7 +73,6 @@ function getLikertToResult (num) {
 
     for(let i = 1; i < 10; i+=2){
         let likertLevel = scaleElem.childNodes[i].childNodes[1];
-        console.log(scaleElem.childNodes[i].childNodes[1]);
         if(likertLevel.checked){
             return numClickedLikert;
         }

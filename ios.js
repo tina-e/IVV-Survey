@@ -1,5 +1,4 @@
 
-
 function readTextFile(file)
 {
     var rawFile = new XMLHttpRequest();
