@@ -73,6 +73,7 @@ function getLikertToResult (num) {
 
     for(let i = 1; i < 10; i+=2){
         let likertLevel = scaleElem.childNodes[i].childNodes[1];
+        console.log(scaleElem.childNodes[i].childNodes[1]);
         if(likertLevel.checked){
             return numClickedLikert;
         }
