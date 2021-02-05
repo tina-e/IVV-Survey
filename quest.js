@@ -63,11 +63,13 @@ function endQuestionary() {
 
         let matNummer = document.getElementById("matNummer").value;
 
+        let matNummer = document.getElementById("matNummer").value;
+        let course = document.getElementById("course").value; 
         let email = document.getElementById("mail").value;
 
-        let jsonText = '{ "notedGramDiffrenze":"' + notedDif + '", "participantsNotedDots":"' + notedDot + '", "itInfluenzedPartizipants":"' + influenzed + '", "credibleChangeGeneral":"' + credibleChangeGeneral + '", "harderToRead":"' + harderToRead + '", "gender":"' + gender + '", "age":"' + age + '",  "profession":"' + profession + '","langLevel":"' + langLevel + '","matNummer":"' + matNummer + '","email":"' + email + '"}';
-        //let jsonObjekt = JSON.parse(jsonText);
-        let jsonObjekt = jsonText;
+        let jsonText = '{ "notedGramDiffrenze":"' + notedDif + '", "participantsNotedDots":"' + notedDot + '", "itInfluenzedPartizipants":"' + influenzed + '", "credibleChangeGeneral":"' + credibleChangeGeneral + '", "harderToRead":"' + harderToRead + '", "gender":"' + gender + '", "age":"' + age + '",  "profession":"' + profession + '","langLevel":"' + langLevel + '","matNummer":"' + matNummer + '","course":"' + course + '","email":"' + email + '"}';
+        let jsonObjekt = JSON.parse(jsonText);
+        //let jsonObjekt = jsonText;
         addToServer(jsonObjekt);
     }
     else {
