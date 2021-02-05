@@ -2,7 +2,8 @@ import IOS from "./ios.js";
 import {generateRandoms, shuffle, generateSessionId} from "./randomizer.js";
 
 var topicId = 0;
-var remainingTopics= [0,1,2,3,4,5];
+//var remainingTopics= [0,1,2,3,4,5];
+var remainingTopics= [0];
 var resultDOMS = document.querySelectorAll('.result');
 var likertScaleDOMS = document.querySelectorAll('.likert');
 document.querySelector('.submit').addEventListener("click", next);
@@ -25,6 +26,7 @@ function init(){
 
 function goToEndQuestionary(){
     console.log("Start end questionary here");
+    location.href = "http://127.0.0.1:5500/quest.html";
 }
 
 function buildSerp(){
