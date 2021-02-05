@@ -14,6 +14,7 @@ var questions = ["Can convalescent plasma cure COVID-19?","Can exposure to UV li
 
 function init(){
     ios = new IOS(generateSessionId());
+    console.log(ios);
     remainingTopics = shuffle(remainingTopics);
     
     //save topic order in filename sessionId
