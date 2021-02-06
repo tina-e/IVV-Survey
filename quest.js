@@ -92,10 +92,10 @@ function checkFinishedAllowed() {
     }
 
     for (let i = 0; i < requireds.length; i++) {
-        let answerPossibilities = requireds[i].childNodes[1];
+        let answerPossibilities = requireds[i].children;
         let isQuestionAnswered = false;
         for (let j = 0; j < answerPossibilities.length; j++) {
-            if (answerPossibilities[i].firstChild.checked) {
+            if (answerPossibilities[j].children[0].checked === true) {
                 isQuestionAnswered = true;
             }
         }
@@ -103,6 +103,7 @@ function checkFinishedAllowed() {
             return false;
         }
     }
+    return true;
 }
 
 init();
