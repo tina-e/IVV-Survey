@@ -44,7 +44,9 @@ cite a:visited {
 }
 
 .KIy09e {
-    width: 600px;
+    /*width: 600px;*/
+	max-width: 600px;
+	width: 100%;
     margin-top: 0;
     margin-bottom: 28px
 }
@@ -72,7 +74,7 @@ cite a:visited {
 
 #cnt {
     clear: both;
-    min-width: 833px;
+    /*min-width: 833px;*/
     margin-left: 0;
     padding-top: 20px;
     box-sizing: border-box;
@@ -84,9 +86,11 @@ cite a:visited {
 #center_col {
     clear: both;
     position: relative;
-    margin-right: 264px;
+    /*margin-right: 264px;*/
     margin-left: 180px;
-    width: 652px
+    /*width: 652px*/
+	width: 100%
+	max-width: 652px;
 }
 
 
@@ -98,6 +102,7 @@ cite a:visited {
 
 .IsZvec {
     max-width: 48em;
+	width: 100%;
     color: #4d5156;
     line-height: 1.58
 }
@@ -121,9 +126,6 @@ cite a:visited {
     z-index: -1000;
     user-select: none
 }
-
-
-
 
 
 #rhs.rhstc4 .VjDLd {
