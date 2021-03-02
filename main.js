@@ -30,7 +30,7 @@ function goToEndQuestionary(){
 }
 
 function buildSerp(){
-    window.scroll(0,0);
+    document.getElementById("gsr").scrollIntoView();
     topicId = remainingTopics[0];
     remainingTopics = remainingTopics.splice(1,remainingTopics.length);
 
